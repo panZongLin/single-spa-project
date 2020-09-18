@@ -1,0 +1,40 @@
+{
+	"presets": [
+		[
+			"@babel/env",
+			{
+				"useBuiltIns": "usage",
+				"corejs": 3
+			}
+		],
+		"@babel/react"
+	],
+	"plugins": [
+		[
+			//将类和对象装饰器编译到ES5
+			"@babel/plugin-proposal-decorators",
+			{
+				"legacy": true
+			}
+		],
+		[
+			//转换静态类属性以及用属性初始化器语法声明的属性
+			"@babel/proposal-class-properties",
+			{
+				"loose": true
+			}
+		],
+		//编译对象rest并扩展到ES5
+		"@babel/proposal-object-rest-spread", 
+		//允许解析import()
+		"@babel/plugin-syntax-dynamic-import",
+		[
+			"import", 
+			{
+			  "libraryName": "antd",
+			  "libraryDirectory": "es",
+			  "style": true
+			}
+		]
+	]
+}
